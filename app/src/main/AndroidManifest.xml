@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="ned.mats.planty"
+		  xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<uses-feature android:name="android.hardware.type.watch"/>
+
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="ned.mats.planty.permission.MAPS_RECEIVE"/>
+
+	<application
+		android:name=".PlantyApplication"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@android:style/Theme.DeviceDefault">
+		<uses-library
+			android:name="com.google.android.wearable"
+			android:required="false"/>
+
+		<meta-data
+			android:name="com.google.android.wearable.standalone"
+			android:value="true"/>
+		<meta-data
+			android:name="AA_DB_NAME"
+			android:value="plants.db"/>
+		<meta-data
+			android:name="AA_DB_VERSION"
+			android:value="2"/>
+		<meta-data
+			android:name="AA_MODELS"
+			android:value="ned.mats.planty.data.Plant, ned.mats.planty.data.PlantTip, ned.mats.planty.data.UserPlant"/>
+		<meta-data
+			android:name="AA_SERIALIZERS"
+			android:value="ned.mats.planty.serializers.DateTimeSerializer"/>
+
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCsWW6mHO4oWP8f7YDu9wiGPL6u58dLiEo"/>
+
+		<activity
+			android:name=".activity.MainActivity"
+			android:label="@string/app_name"
+			android:theme="@android:style/Theme.DeviceDefault.Light">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".activity.AddUserPlantActivity"
+			android:label="@string/title_activity_add_user_plant">
+		</activity>
+		<activity
+			android:name=".activity.ViewUserPlantActivity"
+			android:label="@string/title_activity_view_user_plant"
+			android:theme="@android:style/Theme.DeviceDefault.Light">
+		</activity>
+	</application>
+
+</manifest>

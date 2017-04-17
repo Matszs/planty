@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+	android:id="@+id/container"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="ned.mats.planty.activity.ViewUserPlantActivity"
+	tools:deviceIds="wear">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/text_layout_margin"
+				android:layout_margin="30dp">
+
+				<ImageView
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:layout_marginBottom="20dp"
+					android:layout_centerHorizontal="true"
+					android:id="@+id/stock_image"
+					android:src="@drawable/plant"
+					android:adjustViewBounds="false"/>
+
+				<TextView
+					android:layout_width="50dp"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/stock_image"
+					android:id="@+id/plant_description"
+					android:text="Plant:"
+					android:textColor="#000"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toEndOf="@+id/plant_description"
+					android:layout_alignTop="@+id/plant_description"
+					android:id="@+id/plant_name_field"
+					android:layout_marginLeft="10dp"
+					android:text="-"/>
+
+				<TextView
+					android:layout_width="50dp"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/plant_description"
+					android:id="@+id/plant_created"
+					android:text="Datum:"
+					android:textColor="#000"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toEndOf="@+id/plant_created"
+					android:layout_alignTop="@+id/plant_created"
+					android:id="@+id/plant_created_field"
+					android:layout_marginLeft="10dp"
+					android:text="-"/>
+
+			</RelativeLayout>
+
+			<FrameLayout
+				android:layout_width="match_parent"
+				android:layout_height="100dp"
+				android:id="@+id/root_container"
+				android:layout_below="@+id/text_layout_margin">
+
+				<FrameLayout
+					android:id="@+id/map_container"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<fragment
+						android:id="@+id/map"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:name="com.google.android.gms.maps.MapFragment"/>
+
+				</FrameLayout>
+
+			</FrameLayout>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/text_layout_margin_2"
+				android:layout_below="@+id/root_container"
+				android:layout_margin="30dp">
+
+				<TextView
+					android:layout_width="50dp"
+					android:layout_height="wrap_content"
+					android:id="@+id/plant_tips"
+					android:text="Tips:"
+					android:textSize="18sp"
+					android:layout_marginBottom="10dp"
+					android:textColor="#000"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/tips_text"
+					android:layout_below="@+id/plant_tips"/>
+
+			</RelativeLayout>
+
+
+		</RelativeLayout>
+	</ScrollView>
+
+</android.support.wearable.view.BoxInsetLayout>

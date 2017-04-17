@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+											  xmlns:app="http://schemas.android.com/apk/res-auto"
+											  xmlns:tools="http://schemas.android.com/tools"
+											  android:id="@+id/container"
+											  android:layout_width="match_parent"
+											  android:layout_height="match_parent"
+											  tools:context=".activity.AddUserPlantActivity"
+											  tools:deviceIds="wear">
+
+	<FrameLayout
+		android:id="@+id/frame_layout_1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_box="all">
+
+
+		<android.support.wearable.view.WearableListView
+			android:id="@+id/wearable_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+	</FrameLayout>
+	<FrameLayout
+		android:id="@+id/frame_layout_2"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone"
+		app:layout_box="all">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Plant toevoegen"
+				android:layout_marginBottom="20dp"
+				android:textSize="22sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/plant_name"
+				android:layout_marginBottom="26dp"
+				android:textSize="18sp"
+				android:text="Plant naam"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<android.support.wearable.view.CircledImageView
+					android:id="@+id/button_deny"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/ic_deny"
+					app:circle_color="@color/red"
+					app:circle_radius="30dp"
+					app:circle_radius_pressed="31dp"/>
+
+				<android.support.wearable.view.CircledImageView
+					android:id="@+id/button_accept"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:src="@drawable/ic_accept"
+					app:circle_color="@color/green"
+					app:circle_radius="30dp"
+					app:circle_radius_pressed="31dp"/>
+
+			</RelativeLayout>
+
+		</LinearLayout>
+
+	</FrameLayout>
+
+
+</android.support.wearable.view.BoxInsetLayout>
